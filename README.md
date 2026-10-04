@@ -41,3 +41,4 @@ ARM64 / Android API 34 以上。SideQuest 或 adb install -r bili233-0.10.2.apk�
 
 
 //由GPT 6.0ASTRA  及 6.1 sol 构建源码
+//仅在quest3 上完成验证
