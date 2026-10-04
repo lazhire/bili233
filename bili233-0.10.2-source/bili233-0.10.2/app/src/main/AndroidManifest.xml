@@ -1,0 +1,29 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:horizonos="http://schemas.horizonos/sdk">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.oculus.permission.HAND_TRACKING"/>
+    <uses-permission android:name="horizonos.permission.HAND_TRACKING"/>
+    <uses-feature android:name="oculus.software.handtracking" android:required="false"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="com.oculus.permission.RENDER_MODEL"/>
+    <uses-feature android:name="android.hardware.vr.headtracking" android:required="true"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="com.oculus.feature.VIRTUAL_KEYBOARD" android:required="false"/>
+    <uses-feature android:name="oculus.software.overlay_keyboard" android:required="false"/>
+    <uses-feature android:name="com.oculus.feature.RENDER_MODEL" android:required="false"/>
+    <uses-feature android:glEsVersion="0x00030001" android:required="true"/>
+    <horizonos:uses-horizonos-sdk horizonos:minSdkVersion="69" horizonos:targetSdkVersion="69"/>
+    <application android:label="bili233" android:icon="@drawable/app_icon" android:theme="@style/AppTheme" android:allowBackup="false" android:dataExtractionRules="@xml/data_extraction_rules" android:usesCleartextTraffic="false" android:hardwareAccelerated="true" android:supportsRtl="true" android:enableOnBackInvokedCallback="false">
+        <meta-data android:name="com.oculus.supportedDevices" android:value="quest2|questpro|quest3|quest3s"/>
+        <meta-data android:name="com.oculus.handtracking.version" android:value="V2.0"/>
+        <meta-data android:name="com.oculus.handtracking.frequency" android:value="HIGH"/>
+        <meta-data android:name="com.oculus.vr.focusaware" android:value="true"/>
+        <uses-native-library android:name="libossdk.oculus.so" android:required="true"/>
+        <activity android:name=".MainActivity" android:exported="true" android:resizeableActivity="true" android:launchMode="singleTask" android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden|density|uiMode">
+            <layout android:defaultWidth="1440dp" android:defaultHeight="900dp" android:minWidth="720dp" android:minHeight="450dp"/>
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEFAULT"/><category android:name="com.oculus.intent.category.2D"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+        </activity>
+        <activity android:name=".CinemaActivity" android:exported="true" android:taskAffinity="io.local.questwebcinema.immersive" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" android:launchMode="singleTask" android:configChanges="screenSize|screenLayout|orientation|keyboardHidden|keyboard|navigation|uiMode">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEFAULT"/><category android:name="com.oculus.intent.category.VR"/></intent-filter>
+        </activity>
+    </application>
+</manifest>
